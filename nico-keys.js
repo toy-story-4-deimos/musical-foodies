@@ -1,1 +1,0 @@
-const foodKey = "f22429106d2e40e4a04ddab2bc402360";
