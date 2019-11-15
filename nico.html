@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Food Integrator</title>
+</head>
+<style>
+
+    #cuisineDropDown {
+        margin-top: 2em;
+        width: 100%;
+
+    }
+    .cuisine {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    #columnOne, #columnTwo {
+        border: 1px solid black;
+        height: 100%;
+
+    }
+
+    #columnOne {
+        height: 187vh;
+    }
+
+    .searcher {
+        padding: auto;
+        margin: auto;
+    }
+
+
+
+</style>
+<body>
+<!--main navbar-->
+<nav>
+    <div class="nav-wrapper color black">
+        <a href="#" class="brand-logo">Logo</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Stuff</a></li>
+            <li><a href="#">Stuff</a></li>
+            <li><a href="#">Stuff</a></li>
+            <li><a href="#">Stuff</a></li>
+        </ul>
+    </div>
+    <!--Side navbar-->
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Projects</a></li>
+    </ul>
+</nav>
+<!--end navbar-->
+
+
+<!-- Page Layout here -->
+<div class="row">
+
+    <div class="col s12 m2 13 color grey" id="columnOne">
+
+
+        <!-- Left panel -->
+
+        <!-- Dropdown Trigger -->
+
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1' id="cuisineDropDown">Cuisine
+            <i class="material-icons">details</i></a>
+
+        <!--Dropdown Trigger End-->
+
+
+        <!-- Dropdown Structure -->
+        <div class="dropDowner">
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="#!"><i class="material-icons">view_module</i>French</a></li>
+                <li><a href="#!"><i class="material-icons">view_module</i>Italian</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="#!"><i class="material-icons">view_module</i>Chinese</a></li>
+                <li><a href="#!"><i class="material-icons">view_module</i>etc</a></li>
+                <li><a href="#!"><i class="material-icons">cloud</i>etc</a></li>
+            </ul>
+        </div>
+        <!--Dropdown Structure end-->
+
+
+        <!--Input field for search-->
+        <div class="searcher">
+            <form>
+                <div class="input-field color white">
+                    <input id="search" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+        <!--Search bar end-->
+
+
+        <!--Checkboxes-->
+        <div>
+            <h4>Special Diets:</h4>
+            <form action="#">
+                <p>
+                    <label>
+                        <input type="checkbox"/>
+                        <span>Red</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox"/>
+                        <span>Red</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox"/>
+                        <span>Red</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox"/>
+                        <span>Red</span>
+                    </label>
+                </p>
+            </form>
+        </div>
+    </div>
+    <!--Checkboxes end-->
+
+    <div class="col s12 m10 13 color grey" id="columnTwo">
+        <!-- Second page content  -->
+
+        <!--Carousel Slider-->
+        <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+        </div>
+        <!--Carousel Slider End-->
+
+        <!--Card 1 Start-->
+        <div class="col s12 m7">
+            <h2 class="header">Horizontal Card</h2>
+            <div class="card horizontal">
+
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+                <div class="card-image">
+                    <img src="https://lorempixel.com/100/190/nature/6">
+                </div>
+            </div>
+        </div>
+        <!--Card 1 End-->
+
+
+        <!--Card 2 Start-->
+        <div class="col s12 m7">
+            <h2 class="header">Horizontal Card</h2>
+            <div class="card horizontal">
+
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+                <div class="card-image">
+                    <img src="https://lorempixel.com/100/190/nature/6">
+                </div>
+            </div>
+        </div>
+        <!--Card 2 End-->
+
+        <!--Card 3 Start-->
+        <div class="col s12 m7">
+            <h2 class="header">Horizontal Card</h2>
+            <div class="card horizontal">
+
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+                <div class="card-image">
+                    <img src="https://lorempixel.com/100/190/nature/6">
+                </div>
+            </div>
+        </div>
+        <!--Card 3 End-->
+    </div>
+
+</div>
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="materialize%202/js/materialize.js"></script>
+<script src="js/nico-keys.js"></script>
+<script src="js/nico.js"></script>
+
+<script>
+    //initialization down below when doc is ready
+    $(document).ready(function () {
+        $('.sidenav').sidenav();
+
+        $('.dropdown-trigger').dropdown();
+
+        $('.carousel.carousel-slider').carousel({
+            fullWidth: true
+        });
+    });
+
+</script>
+</body>
+</html>
