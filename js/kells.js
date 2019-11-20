@@ -9,6 +9,9 @@ let dishTypes = "";
 
 let tags = `tags=${cuisines},${diets},${intolerances},${dishTypes}`;
 
+// let sort = `sort=${popularity},${healthiness},${price},${time}`;
+
+// let query = `query=${searchInput}`;
 
 
 
@@ -58,24 +61,24 @@ let tags = `tags=${cuisines},${diets},${intolerances},${dishTypes}`;
 
 //---------------------- Picks random dish with tags by user -----------------
 
-// function getRandomDishWithTag() {
-//     fetch(`https://api.spoonacular.com/recipes/random?number=1&${tags}&apiKey=${foodKey}`)
-//         .then(response => response.json())
-//         .then(element => {
-//             console.log(element);
-//             let ready = element;
-//             console.log(ready)
-//
-//
-//         }).catch(err => {
-//         console.log(err);
-//     })
-//
-// }
-//
-//
-// getRandomDishWithTag();
-// console.log("git test");
+function getRandomDishWithTag() {
+    fetch(`https://api.spoonacular.com/recipes/random?number=1&cuisine=American&apiKey=${foodKey}`)
+        .then(response => response.json())
+        .then(element => {
+            console.log(element);
+            let ready = element;
+            console.log(ready)
+
+
+        }).catch(err => {
+        console.log(err);
+    })
+
+}
+
+
+getRandomDishWithTag();
+console.log("git test");
 
 
 
@@ -129,25 +132,43 @@ let tags = `tags=${cuisines},${diets},${intolerances},${dishTypes}`;
 
 //---------------------Tells you a random food trivia ---------------
 
-function getFoodTrivia() {
-    fetch(`https://api.spoonacular.com/food/trivia/random?&apiKey=${foodKey}`)
-        .then(response => response.json())
-        .then(element => {
-            console.log(element);
-            let ready = element;
-            console.log(ready)
+// function getFoodTrivia() {
+//     fetch(`https://api.spoonacular.com/food/trivia/random?&apiKey=${foodKey}`)
+//         .then(response => response.json())
+//         .then(element => {
+//             console.log(element);
+//             let ready = element;
+//             console.log(ready)
+//
+//
+//         }).catch(err => {
+//         console.log(err);
+//     })
+//
+// }
+//
+//
+// getFoodTrivia();
+// console.log("git test");
 
 
-        }).catch(err => {
-        console.log(err);
-    })
-
-}
-
-
-getFoodTrivia();
-console.log("git test");
-
+// function getSortedDishes() {
+//     fetch(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&sort=time&apiKey=${foodKey}`)
+//         .then(response => response.json())
+//         .then(element => {
+//             console.log(element);
+//             let ready = element;
+//             console.log(ready)
+//
+//
+//         }).catch(err => {
+//         console.log(err);
+//     })
+//
+// }
+//
+// getSortedDishes();
+// console.log("git test");
 
 
 
