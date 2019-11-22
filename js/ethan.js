@@ -1,6 +1,9 @@
 "use strict";
 let searchTerm;
 let wineSearch;
+let foodToPair;
+let foodPairings;
+
 
 // Example search syntax
 // https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=API-KEY
@@ -26,7 +29,7 @@ const testRequest = () => {
 const searchByWine = () => {
     wineSearch = 'malbec';
     return fetch(`https://api.spoonacular.com/food/wine/dishes?wine=${wineSearch}&apiKey=${foodKey}`)
-        .then(response => response.json())
+        .then(response => response.json());
 };
 
 // Function to recommend wine types based on type of food searched
@@ -45,10 +48,12 @@ const recommendWine = () => {
 
 
 const requestTest = () => {
-    pairWineWithFood()
+    searchByWine()
         .then((foodList) => {
             test = foodList;
-            console.log(test)
+            foodPairings = foodList.pairings;
+            console.log(test);
+            console.log(foodPairings)
         })
 };
 requestTest();
