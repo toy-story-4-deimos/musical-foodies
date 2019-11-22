@@ -12,26 +12,19 @@
     <title>Food Integrator</title>
 </head>
 <style>
+    body {
+        background-color: #C09074;
+        font-family: 'Raleway', sans-serif;
+
+    }
 
     #cuisineDropDown {
         margin-top: 2em;
         width: 100%;
+        background-color: #784742;
 
-    }
-    .cuisine {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+        font-size: 20px;
 
-
-    #columnOne, #columnTwo {
-        border: 1px solid black;
-        height: 100%;
-
-    }
-
-    #columnOne {
-        height: 187vh;
     }
 
     .searcher {
@@ -39,58 +32,112 @@
         margin: auto;
     }
 
+    .carousel {
+        position: center;
+        height: 80vh;
+    }
+
+    nav {
+        position: fixed;
+        z-index: 5;
+        background-color: #784742;
+        font-family: 'Dancing Script', cursive;
+    }
+    .page-footer {
+        background-color: #784742;
+        font-family: 'Dancing Script', cursive;
+        height: 40vh;
+
+    }
+
+    .input-field{
+       color: #784742;
+    }
+    /*#footerImg {*/
+    /*    display: flex;*/
+    /*    justify-content: start;*/
+
+    /*}*/
+
+    /*footer{*/
+    /*   width: 100vw;*/
+    /*}*/
 
 
 </style>
 <body>
 <!--main navbar-->
 <nav>
-    <div class="nav-wrapper color black">
-        <a href="#" class="brand-logo">Logo</a>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Nectar Pairings</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#">Stuff</a></li>
-            <li><a href="#">Stuff</a></li>
-            <li><a href="#">Stuff</a></li>
-            <li><a href="#">Stuff</a></li>
+            <li><a href="#">Sign Up!</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">FAQ</a></li>
         </ul>
     </div>
     <!--Side navbar-->
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Projects</a></li>
+        <li><a href="#">Sign Up!</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">FAQ</a></li>
     </ul>
 </nav>
 <!--end navbar-->
 
 
+<!--Carousel Slider-->
+<div class="carousel carousel-slider">
+    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+</div>
+<!--Carousel Slider End-->
+
+
+
 <!-- Page Layout here -->
-<div class="row">
-
-    <div class="col s12 m2 13 color grey" id="columnOne">
-
+<div class="row" id="searchDropper">
+    <div class="col s12 m2 13 color white" id="columnOne">
 
         <!-- Left panel -->
 
         <!-- Dropdown Trigger -->
 
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown1' id="cuisineDropDown">Cuisine
-            <i class="material-icons">details</i></a>
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1' id="cuisineDropDown"><i class="material-icons">details</i>Cuisine
+        </a>
 
         <!--Dropdown Trigger End-->
 
 
         <!-- Dropdown Structure -->
-        <div class="dropDowner">
-            <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="#!"><i class="material-icons">view_module</i>French</a></li>
-                <li><a href="#!"><i class="material-icons">view_module</i>Italian</a></li>
+        <div class="dropDowner color white">
+            <ul id='dropdown1' class='dropdown-content color white'>
+                <li><a href="#!"><i class="material-icons">restaurant_menu</i>
+                    <span style="color:black">Chinese</span></a></li>
                 <li class="divider" tabindex="-1"></li>
-                <li><a href="#!"><i class="material-icons">view_module</i>Chinese</a></li>
-                <li><a href="#!"><i class="material-icons">view_module</i>etc</a></li>
-                <li><a href="#!"><i class="material-icons">cloud</i>etc</a></li>
+                <li><a href="#!" class="color white"><i class="material-icons">restaurant_menu</i>
+                    <span style="color:black">French</span></a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="#!" class="color white"><i class="material-icons">restaurant_menu</i>
+                    <span style="color:black">Greek</span></a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="#!" class="color white"><i class="material-icons">restaurant_menu</i>
+                    <span style="color:black">Indian</span></a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="#!" class="color white"><i class="material-icons">restaurant_menu</i>
+                    <span style="color:black">Italian</span></a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="#!" class="color white"><i class="material-icons">restaurant_menu</i>
+                    <span style="color:black">Asian</span></a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="#!" class="black white"><i class="material-icons">restaurant_menu</i>
+                    <span style="color:black">Mexican</span></a></li>
+                <li class="divider" tabindex="-1"></li>
             </ul>
         </div>
         <!--Dropdown Structure end-->
@@ -116,25 +163,32 @@
                 <p>
                     <label>
                         <input type="checkbox"/>
-                        <span>Red</span>
+                        <span style="color:black">Gluten Free</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox"/>
-                        <span>Red</span>
+                        <span style="color:black">Ketogenic</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox"/>
-                        <span>Red</span>
+                        <span style="color:black">Vegetarian</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox"/>
-                        <span>Red</span>
+                        <span style="color:black">Vegan</span>
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox"/>
+                        <span style="color:black">Paleo</span>
                     </label>
                 </p>
             </form>
@@ -142,17 +196,22 @@
     </div>
     <!--Checkboxes end-->
 
-    <div class="col s12 m10 13 color grey" id="columnTwo">
+    <div class="col s12 m10 13 color white" id="columnTwo">
         <!-- Second page content  -->
 
-        <!--Carousel Slider-->
-        <div class="carousel carousel-slider">
-            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
-            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
-            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
-            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+        <!--BIG SEARCH BAR-->
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">search</i>
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <label for="autocomplete-input">Search for...</label>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--Carousel Slider End-->
+
 
         <!--Card 1 Start-->
         <div class="col s12 m7">
@@ -214,14 +273,53 @@
             </div>
         </div>
         <!--Card 3 End-->
+        <!--Card 4 Start-->
+        <div class="col s12 m7">
+            <h2 class="header">Horizontal Card</h2>
+            <div class="card horizontal">
+
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+                <div class="card-image">
+                    <img src="https://lorempixel.com/100/190/nature/6">
+                </div>
+            </div>
+        </div>
     </div>
+    <!--Card 4 End-->
 
 </div>
 
+<!--Footer start-->
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+<!--                <img id="footerImg" src="img/spoonacular.png">-->
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script type="text/javascript" src="materialize%202/js/materialize.js"></script>
+<<<<<<< HEAD
 <!--<script src="js/nico-keys.js"></script>-->
+=======
+<script src="js/keys.js"></script>
+>>>>>>> 4784a4ee132d643d6fdd7186e536a1c3453c87e6
 <script src="js/nico.js"></script>
 <script src="js/keys.js"></script>
 <script src="js/ethan.js"></script>
@@ -235,6 +333,28 @@
         $('.carousel.carousel-slider').carousel({
             fullWidth: true
         });
+        $('input.autocomplete').autocomplete({
+            data: {
+                "Chinese": null,
+                "French": null,
+                "Greek": null,
+                "Indian": null,
+                "Italian": null,
+                "Asian": null,
+                "Mexican": null,
+                "Wine": null,
+                "Recipes": null,
+                "Food": null,
+                "Wine Pairings": null,
+                //i need to eventually link the API to this data here.
+            },
+        });
+        autoplay();
+
+        function autoplay() {
+            $('.carousel.carousel-slider').carousel('next');
+            setTimeout(autoplay, 5000);
+        }
     });
 
 </script>
