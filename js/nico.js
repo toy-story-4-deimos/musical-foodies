@@ -19,3 +19,30 @@
 // console.log("git test");
 
 
+//need to create a function that sends in information to the cards.
+
+/////////////////////////
+/////Card Function///////
+/////////////////////////
+$(document).ready(function(){
+    function getRandomDishImgWithTag() {
+        fetch(`https://api.spoonacular.com/recipes/${id}/image/?&apiKey=${foodKey}`)
+            .then(response => response.json())
+            .then(element => {
+                console.log(element);
+                console.log(element);
+                $('.card-image-one').append('<img src=').append(element.title);
+                let ready = element;
+                console.log(ready)
+
+
+            }).catch(err => {
+            console.log(err);
+        })
+
+    }
+    getRandomDishImgWithTag()
+
+});
+
+

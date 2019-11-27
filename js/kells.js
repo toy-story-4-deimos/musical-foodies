@@ -85,24 +85,27 @@ console.log("git test");
 //------------------------- Picks a dish by ID and gives summary of dish -------------
 
 
-// function getDishSummary() {
-//     fetch(`https://api.spoonacular.com/recipes/${id}/summary?&apiKey=${foodKey}`)
-//         .then(response => response.json())
-//         .then(element => {
-//             console.log(element);
-//             let ready = element;
-//             console.log(ready)
-//
-//
-//         }).catch(err => {
-//         console.log(err);
-//     })
-//
-// }
-//
-//
-// getDishSummary();
-// console.log("git test");
+function getDishSummary() {
+    fetch(`https://api.spoonacular.com/recipes/${id}/summary?&apiKey=${foodKey}`)
+        .then(response => response.json())
+        .then(element => {
+            console.log(element);
+            $('.card-content-one').append(element.summary);
+            $('.header-one').append(element.title);
+            let ready = element;
+            console.log(ready)
+
+
+        }).catch(err => {
+        console.log(err);
+    })
+
+}
+
+
+getDishSummary();
+console.log("git test");
+
 
 
 //------------------------- Tells a random food joke -------------
