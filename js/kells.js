@@ -80,6 +80,27 @@ function getRandomDishWithTag() {
 getRandomDishWithTag();
 console.log("git test");
 
+//---------------------- Picks 5 random dish with tags by user -----------------
+
+function getFiveRandomDishWithTag() {
+    fetch(`https://api.spoonacular.com/recipes/random?number=5&cuisine=American&apiKey=${foodKey}`)
+        .then(response => response.json())
+        .then(element => {
+            console.log(element);
+            let ready = element;
+            console.log(ready)
+
+
+        }).catch(err => {
+        console.log(err);
+    })
+
+}
+
+
+getFiveRandomDishWithTag();
+console.log("git test");
+
 
 
 //------------------------- Picks a dish by ID and gives summary of dish -------------
