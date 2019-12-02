@@ -66,8 +66,9 @@ function getRandomDishWithTag() {
         .then(response => response.json())
         .then(element => {
             console.log(element);
-            let ready = element;
-            console.log(ready)
+            // $('.card-image-one').append(`<img src= "${element[0].image}">`);
+            $('.card-image-one').html(`<img src= "${element.recipes[0].image}">`);
+            console.log(element.recipes[0])
 
 
         }).catch(err => {
