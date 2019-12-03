@@ -61,13 +61,19 @@ let tags = `tags=${cuisines},${diets},${intolerances},${dishTypes}`;
 
 //---------------------- Picks random dish with tags by user -----------------
 
-function getRandomDishWithTag() {
-    fetch(`https://api.spoonacular.com/recipes/random?number=1&cuisine=American&apiKey=${foodKey}`)
+//greek dish function
+function getRandomGreekDishWithTag() {
+    fetch(`https://api.spoonacular.com/recipes/random?number=1&cuisine=Greek&apiKey=${foodKey}`)
         .then(response => response.json())
         .then(element => {
             console.log(element);
-            // $('.card-image-one').append(`<img src= "${element[0].image}">`);
+            console.log(element.recipes[0].title);
+            console.log(element.recipes[0].winePairing);
+            $('.header-one').append(element.recipes[0].title);
+            $('.card-content-one').append(element.recipes[0].winePairing.pairingText);
+
             $('.card-image-one').html(`<img src= "${element.recipes[0].image}">`);
+
             console.log(element.recipes[0])
 
 
@@ -78,18 +84,22 @@ function getRandomDishWithTag() {
 }
 
 
-getRandomDishWithTag();
-console.log("git test");
+getRandomGreekDishWithTag();
 
-//---------------------- Picks 5 random dish with tags by user -----------------
+//chinese dish function
 
-function getFiveRandomDishWithTag() {
-    fetch(`https://api.spoonacular.com/recipes/random?number=5&cuisine=American&apiKey=${foodKey}`)
+function getRandomChineseDishWithTag() {
+    fetch(`https://api.spoonacular.com/recipes/random?number=1&cuisine=Chinese&apiKey=${foodKey}`)
         .then(response => response.json())
         .then(element => {
             console.log(element);
-            let ready = element;
-            console.log(ready)
+            console.log(element.recipes[0].title);
+            console.log(element.recipes[0].winePairing);
+            $('.header-two').append(element.recipes[0].title);
+            $('.card-content-two').append(element.recipes[0].winePairing.pairingText);
+            $('.card-image-two').html(`<img src= "${element.recipes[0].image}">`);
+
+            console.log(element.recipes[0])
 
 
         }).catch(err => {
@@ -99,34 +109,80 @@ function getFiveRandomDishWithTag() {
 }
 
 
-getFiveRandomDishWithTag();
-console.log("git test");
+getRandomChineseDishWithTag();
+
+//french dish function
+
+function getRandomFrenchDishWithTag() {
+    fetch(`https://api.spoonacular.com/recipes/random?number=1&cuisine=French&apiKey=${foodKey}`)
+        .then(response => response.json())
+        .then(element => {
+            console.log(element);
+            console.log(element.recipes[0].title);
+            console.log(element.recipes[0].winePairing);
+            $('.header-three').append(element.recipes[0].title);
+            $('.card-content-three').append(element.recipes[0].winePairing.pairingText);
+            $('.card-image-three').html(`<img src= "${element.recipes[0].image}">`);
+
+            console.log(element.recipes[0])
+
+
+        }).catch(err => {
+        console.log(err);
+    })
+
+}
+
+
+getRandomFrenchDishWithTag();
+
+//---------------------- Picks 5 random dish with tags by user -----------------
+
+// function getFiveRandomDishWithTag() {
+//     fetch(`https://api.spoonacular.com/recipes/random?number=5&cuisine=American&apiKey=${foodKey}`)
+//         .then(response => response.json())
+//         .then(element => {
+//             console.log(element);
+//             let ready = element;
+//             console.log(ready)
+//
+//
+//         }).catch(err => {
+//         console.log(err);
+//     })
+//
+// }
+//
+//
+// getFiveRandomDishWithTag();
+// console.log("git test");
 
 
 
 //------------------------- Picks a dish by ID and gives summary of dish -------------
 
 
-function getDishSummary() {
-    fetch(`https://api.spoonacular.com/recipes/${id}/summary?&apiKey=${foodKey}`)
-        .then(response => response.json())
-        .then(element => {
-            console.log(element);
-            $('.card-content-one').append(element.summary);
-            $('.header-one').append(element.title);
-            let ready = element;
-            console.log(ready)
-
-
-        }).catch(err => {
-        console.log(err);
-    })
-
-}
-
-
-getDishSummary();
-console.log("git test");
+// function getDishSummary() {
+//     fetch(`https://api.spoonacular.com/recipes/${id}/summary?&apiKey=${foodKey}`)
+//         .then(response => response.json())
+//         .then(element => {
+//             console.log(element);
+//             $('.card-content-one').append(element.summary);
+//             $('.header-one').append(element.title);
+//             // $('.card-image-one').html(`<img src= "${element.recipes[0].image}">`);
+//             let ready = element;
+//             console.log(ready)
+//
+//
+//         }).catch(err => {
+//         console.log(err);
+//     })
+//
+// }
+//
+//
+// getDishSummary();
+// console.log("git test");
 
 
 

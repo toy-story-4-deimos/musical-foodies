@@ -45,3 +45,28 @@
 // });
 
 
+//click button logic for foods
+$('#chinese').click(function(){
+    getRandomChineseDishWithTag();
+
+});
+$('#french').click(function(){
+    getRandomFrenchDishWithTag();
+
+});
+$('#greek').click(function(){
+    getRandomGreekDishWithTag();
+
+});
+$('#indian').click(function(){
+
+});
+$('#italian').click(function(){
+
+});
+$('#asian').click(function(){
+
+});
+$('#mexican').click(function(){
+
+});
