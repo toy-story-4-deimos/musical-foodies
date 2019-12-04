@@ -2,18 +2,43 @@
 
 //The tags (can be diets, meal types, cuisines, or intolerances) that the recipe must have.
 
-let id = 35;
-let cuisines = "";
-let diets = "";
-let intolerances = "";
-let dishTypes = "";
-
-let tags = `tags=${cuisines},${diets},${intolerances},${dishTypes}`;
-// let sort = `sort=${popularity},${healthiness},${price},${time}`;
-
-// let query = `query=${searchInput}`;
-
-
+// let id = 35;
+// let cuisines = "";
+// let diets = "";
+// let intolerances = "";
+// let dishTypes = "";
+//
+// let tags = `tags=${cuisines},${diets},${intolerances},${dishTypes}`;
+// // let sort = `sort=${popularity},${healthiness},${price},${time}`;
+//
+// // let query = `query=${searchInput}`;
+// let input = "";
+//
+// $("#search-button").click(function () {
+//     input = $("#search").val();
+//     console.log(input);
+// });
+//
+//
+//
+// function getRandomDish() {
+//     fetch(`https://api.spoonacular.com/recipes/autocomplete?number=4&query=${input}?${foodKey}`)
+//         .then(response => response.json())
+//         .then(element => {
+//             console.log(element);
+//             let ready = element;
+//             console.log(ready)
+//
+//
+//         }).catch(err => {
+//         console.log(err);
+//     })
+//
+// }
+//
+//
+// getRandomDish();
+// console.log("git test");
 
 
 //--------------------- Picks a random dish ----------------------------
@@ -264,3 +289,12 @@ let tags = `tags=${cuisines},${diets},${intolerances},${dishTypes}`;
 
 
 // Write a function to pull up a module to be able to leave a review when leave a review is clicked
+
+
+
+//
+//
+//
+//
+//
+//

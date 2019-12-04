@@ -1,23 +1,6 @@
 "use strict";
 
-//
-// function getFoodKey() {
-//     fetch(`https://api.spoonacular.com/recipes/search?apiKey=${foodKey}&query=wine&`)
-//         .then(response => response.json())
-//         .then(element => {
-//             console.log(element);
-//             let ready = element;
-//             console.log(ready)
-//         })
-//         .catch(err => {
-//         console.log(err);
-//     })
-//
-// }
-//
-//
-// getFoodKey();
-// console.log("git test");
+
 
 //create function to minimize pings
 
@@ -75,6 +58,43 @@ $(document).ready(function () {
     $('#mexican').click(function () {
         loadAPICuisine("mexican");
     });
+
+
+
+    let input = "";
+
+    $("#search-button").click(function () {
+        let input = $("#search").val();
+        autoCompleteSearchBar();
+        console.log(input);
+    });
+
+    function autoCompleteSearchBar() {
+
+
+
+    fetch(`https://api.spoonacular.com/recipes/search?number=4&query=${input}&apiKey=${foodKey}&cuisine=chinese`)
+        .then(response => response.json())
+        .then(element => {
+            console.log(element);
+            $('.header-one').append(element.recipes[0].title);
+            $('.card-content-one').append(element.recipes[0].winePairing.pairingText);
+            $('.card-image-one').html(`<img src= "${element.recipes[0].image}">`);
+            $('.header-two').append(element.recipes[1].title);
+            $('.card-content-two').append(element.recipes[1].winePairing.pairingText);
+            $('.card-image-two').html(`<img src= "${element.recipes[1].image}">`);
+            $('.header-three').append(element.recipes[2].title);
+            $('.card-content-three').append(element.recipes[2].winePairing.pairingText);
+            $('.card-image-three').html(`<img src= "${element.recipes[2].image}">`);
+            $('.header-four').append(element.recipes[3].title);
+            $('.card-content-four').append(element.recipes[3].winePairing.pairingText);
+            $('.card-image-four').html(`<img src= "${element.recipes[3].image}">`);
+
+        });
+
+
+    }
+
 
 
 });
