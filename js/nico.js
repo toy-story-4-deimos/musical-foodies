@@ -30,15 +30,15 @@ $(document).ready(function () {
                 $('.header-one').append(element.recipes[0].title);
                 $('.card-content-one').append(element.recipes[0].winePairing.pairingText);
                 $('.card-image-one').html(`<img src= "${element.recipes[0].image}">`);
-                $('.header-two').append(element.recipes[0].title);
-                $('.card-content-two').append(element.recipes[0].winePairing.pairingText);
-                $('.card-image-two').html(`<img src= "${element.recipes[0].image}">`);
-                $('.header-three').append(element.recipes[0].title);
-                $('.card-content-three').append(element.recipes[0].winePairing.pairingText);
-                $('.card-image-three').html(`<img src= "${element.recipes[0].image}">`);
-                $('.header-four').append(element.recipes[0].title);
-                $('.card-content-four').append(element.recipes[0].winePairing.pairingText);
-                $('.card-image-four').html(`<img src= "${element.recipes[0].image}">`);
+                $('.header-two').append(element.recipes[1].title);
+                $('.card-content-two').append(element.recipes[1].winePairing.pairingText);
+                $('.card-image-two').html(`<img src= "${element.recipes[1].image}">`);
+                $('.header-three').append(element.recipes[2].title);
+                $('.card-content-three').append(element.recipes[2].winePairing.pairingText);
+                $('.card-image-three').html(`<img src= "${element.recipes[2].image}">`);
+                $('.header-four').append(element.recipes[3].title);
+                $('.card-content-four').append(element.recipes[3].winePairing.pairingText);
+                $('.card-image-four').html(`<img src= "${element.recipes[3].image}">`);
 
             });
 
