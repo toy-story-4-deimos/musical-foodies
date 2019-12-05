@@ -1,10 +1,11 @@
 "use strict";
 
 
-
 //create function to minimize pings
 
 $(document).ready(function () {
+    $('.modal').modal();
+
     function loadAPICuisine(cuisine) {
         fetch(`https://api.spoonacular.com/recipes/random?number=4&cuisine=${cuisine}&apiKey=${foodKey}`)
             .then(response => response.json())
@@ -60,7 +61,6 @@ $(document).ready(function () {
     });
 
 
-
     let input = "";
 
     $("#search-button").click(function () {
@@ -72,31 +72,44 @@ $(document).ready(function () {
     function autoCompleteSearchBar() {
 
 
+        fetch(`https://api.spoonacular.com/recipes/search?number=4&query=${input}&apiKey=${foodKey}`)
+            .then(response => response.json())
+            .then(element => {
+                console.log(element);
+                $('.header-one').html(element.results[0].title);
+                $('.card-content-one').html("Ready in: " + element.results[0].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
+                $('.card-image-one').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[0].image}">`);
+                console.log(typeof element.results[0].image);
+                $('.header-two').html(element.results[1].title);
+                $('.card-content-two').html("Ready in: " + element.results[1].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
+                $('.card-image-two').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[1].image}">`);
+                $('.header-three').html(element.results[2].title);
+                $('.card-content-three').html("Ready in: " + element.results[2].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
+                $('.card-image-three').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[2].image}">`);
+                $('.header-four').html(element.results[3].title);
+                $('.card-content-four').html("Ready in: " + element.results[3].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
+                $('.card-image-four').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[3].image}">`);
 
-    fetch(`https://api.spoonacular.com/recipes/search?number=4&query=${input}&apiKey=${foodKey}`)
-        .then(response => response.json())
-        .then(element => {
-            console.log(element);
-            $('.header-one').html(element.results[0].title);
-            $('.card-content-one').html("Ready in: " + element.results[0].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
-            $('.card-image-one').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[0].image}">`);
-            console.log(typeof element.results[0].image);
-            $('.header-two').html(element.results[1].title);
-            $('.card-content-two').html("Ready in: " + element.results[1].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
-            $('.card-image-two').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[1].image}">`);
-            $('.header-three').html(element.results[2].title);
-            $('.card-content-three').html("Ready in: " + element.results[2].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
-            $('.card-image-three').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[2].image}">`);
-            $('.header-four').html(element.results[3].title);
-            $('.card-content-four').html("Ready in: " + element.results[3].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
-            $('.card-image-four').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[3].image}">`);
-
-        });
+            });
 
 
     }
 
 
 
+        $("#recipe-button-1").click(function () {
+            let id = element.recipes[0].id;
+            console.log(id);
+            fetch(`https://api.spoonacular.com/recipes/${id}/summary&apiKey=${foodKey}`)
+                .then(response => response.json())
+                .then(element => {
+                    // console.log(element);
+                    $(".modal-content").html("<h4>element.recipes[0].title</h4>");
+                    $(".modal-content").html("<p>element.recipes[0].summary</p>")
+                    // loadAPICuisine(cuisine)
+
+
+                });
+        });
 });
 
