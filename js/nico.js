@@ -77,18 +77,18 @@ $(document).ready(function () {
         .then(response => response.json())
         .then(element => {
             console.log(element);
-            $('.header-one').append(element.results[0].title);
-            $('.card-content-one').append(element.results[0].readyInMinutes);
-            $('.card-image-one').append(`<img src= "https://spoonacular.com/recipeImages/${element.results[0].image}">`);
+            $('.header-one').html(element.results[0].title);
+            $('.card-content-one').html("Ready in: " + element.results[0].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
+            $('.card-image-one').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[0].image}">`);
             console.log(typeof element.results[0].image);
-            $('.header-two').append(element.results[1].title);
-            $('.card-content-two').append(element.results[1].readyInMinutes);
+            $('.header-two').html(element.results[1].title);
+            $('.card-content-two').html("Ready in: " + element.results[1].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
             $('.card-image-two').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[1].image}">`);
-            $('.header-three').append(element.results[2].title);
-            $('.card-content-three').append(element.results[2].readyInMinutes);
+            $('.header-three').html(element.results[2].title);
+            $('.card-content-three').html("Ready in: " + element.results[2].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
             $('.card-image-three').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[2].image}">`);
-            $('.header-four').append(element.results[3].title);
-            $('.card-content-four').append(element.results[3].readyInMinutes);
+            $('.header-four').html(element.results[3].title);
+            $('.card-content-four').html("Ready in: " + element.results[3].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
             $('.card-image-four').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[3].image}">`);
 
         });
