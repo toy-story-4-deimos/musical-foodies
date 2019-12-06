@@ -60,7 +60,6 @@ $(document).ready(function () {
             });
     }
 
-    //need a function that generates dishes to minimize the pings
 
     //click button logic for foods
     $('#chinese').click(function () {
@@ -103,7 +102,6 @@ $(document).ready(function () {
 
     function autoCompleteSearchBar(input) {
 
-
         fetch(`https://api.spoonacular.com/recipes/search?number=4&query=${input}&apiKey=${foodKey}`)
             .then(response => response.json())
             .then(element => {
@@ -122,6 +120,8 @@ $(document).ready(function () {
                 $('.card-content-four').html("Ready in: " + element.results[3].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
                 $('.card-image-four').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[3].image}">`);
 
+
+                //using fetch call to assign the data for the modal
                 firstRecipe.id = element.results[0].id;
                 firstRecipe.title = element.results[0].title;
                 secondRecipe.id = element.results[1].id;
@@ -137,7 +137,7 @@ $(document).ready(function () {
     }
 
 
-
+    //modal one
     $("#recipe-button-1").click(function () {
         console.log(firstRecipe);
         let id = firstRecipe.id;
@@ -156,6 +156,7 @@ $(document).ready(function () {
 
             });
     });
+    //modal two
     $("#recipe-button-2").click(function () {
         console.log(secondRecipe);
         let id = secondRecipe.id;
@@ -174,6 +175,7 @@ $(document).ready(function () {
 
             });
     });
+    //modal three
     $("#recipe-button-3").click(function () {
         console.log(thirdRecipe);
         let id = thirdRecipe.id;
@@ -187,11 +189,13 @@ $(document).ready(function () {
                 thirdRecipe.summary = element.summary;
 
                 $(".modal-content").html("<h4>"+`${thirdRecipe.title}`+"</h4>" + "<p>"+`${thirdRecipe.summary}`+"</p>");
+
                 // loadAPICuisine(cuisine)
 
 
             });
     });
+    //modal four
     $("#recipe-button-4").click(function () {
         console.log(fourthRecipe);
         let id = fourthRecipe.id;
