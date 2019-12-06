@@ -67,31 +67,25 @@ $(document).ready(function () {
     });
     $('#french').click(function () {
         loadAPICuisine("french");
-
     });
     $('#greek').click(function () {
         loadAPICuisine("greek");
-
-
     });
     $('#indian').click(function () {
         loadAPICuisine("indian");
-
     });
     $('#italian').click(function () {
         loadAPICuisine("italian");
-
     });
     $('#japanese').click(function () {
         loadAPICuisine("japanese");
-
     });
     $('#mexican').click(function () {
         loadAPICuisine("mexican");
     });
 
 
-    let input = "";
+    // let input = "";
 
 
     $("#search-button").click(function () {
@@ -109,8 +103,9 @@ $(document).ready(function () {
     //     }
     // });
 
-    function autoCompleteSearchBar(input) {
 
+//function for search bar
+    function autoCompleteSearchBar(input) {
         fetch(`https://api.spoonacular.com/recipes/search?number=4&query=${input}&apiKey=${foodKey}`)
             .then(response => response.json())
             .then(element => {
@@ -223,5 +218,7 @@ $(document).ready(function () {
 
             });
     });
+
+
 });
 
