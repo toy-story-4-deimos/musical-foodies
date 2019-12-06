@@ -10,6 +10,21 @@ $(document).ready(function () {
         title : null,
         summary: null
     };
+    let secondRecipe = {
+        id : null,
+        title : null,
+        summary: null
+    };
+    let thirdRecipe = {
+        id : null,
+        title : null,
+        summary: null
+    };
+    let fourthRecipe = {
+        id : null,
+        title : null,
+        summary: null
+    };
 
     $('.modal').modal();
 
@@ -36,7 +51,12 @@ $(document).ready(function () {
 
                 firstRecipe.id = element.recipes[0].id;
                 firstRecipe.title = element.recipes[0].title;
-
+                secondRecipe.id = element.recipes[1].id;
+                secondRecipe.title = element.recipes[1].title;
+                thirdRecipe.id = element.recipes[2].id;
+                thirdRecipe.title = element.recipes[2].title;
+                fourthRecipe.id = element.recipes[3].id;
+                fourthRecipe.title = element.recipes[3].title;
             });
     }
 
@@ -104,6 +124,12 @@ $(document).ready(function () {
 
                 firstRecipe.id = element.results[0].id;
                 firstRecipe.title = element.results[0].title;
+                secondRecipe.id = element.results[1].id;
+                secondRecipe.title = element.results[1].title;
+                thirdRecipe.id = element.results[2].id;
+                thirdRecipe.title = element.results[2].title;
+                fourthRecipe.id = element.results[3].id;
+                fourthRecipe.title = element.results[3].title;
 
             });
 
@@ -125,6 +151,60 @@ $(document).ready(function () {
                 firstRecipe.summary = element.summary;
 
                 $(".modal-content").html("<h4>"+`${firstRecipe.title}`+"</h4>" + "<p>"+`${firstRecipe.summary}`+"</p>");
+                // loadAPICuisine(cuisine)
+
+
+            });
+    });
+    $("#recipe-button-2").click(function () {
+        console.log(secondRecipe);
+        let id = secondRecipe.id;
+        console.log("Recipe ID: "+id);
+        console.log(`https://api.spoonacular.com/recipes/${id}/summary?apiKey=${foodKey}`);
+        fetch(`https://api.spoonacular.com/recipes/${id}/summary?apiKey=${foodKey}`)
+            .then(response => response.json())
+            .then(element => {
+                console.log(element);
+                secondRecipe.title = element.title;
+                secondRecipe.summary = element.summary;
+
+                $(".modal-content").html("<h4>"+`${secondRecipe.title}`+"</h4>" + "<p>"+`${secondRecipe.summary}`+"</p>");
+                // loadAPICuisine(cuisine)
+
+
+            });
+    });
+    $("#recipe-button-3").click(function () {
+        console.log(thirdRecipe);
+        let id = thirdRecipe.id;
+        console.log("Recipe ID: "+id);
+        console.log(`https://api.spoonacular.com/recipes/${id}/summary?apiKey=${foodKey}`);
+        fetch(`https://api.spoonacular.com/recipes/${id}/summary?apiKey=${foodKey}`)
+            .then(response => response.json())
+            .then(element => {
+                console.log(element);
+                thirdRecipe.title = element.title;
+                thirdRecipe.summary = element.summary;
+
+                $(".modal-content").html("<h4>"+`${thirdRecipe.title}`+"</h4>" + "<p>"+`${thirdRecipe.summary}`+"</p>");
+                // loadAPICuisine(cuisine)
+
+
+            });
+    });
+    $("#recipe-button-4").click(function () {
+        console.log(fourthRecipe);
+        let id = fourthRecipe.id;
+        console.log("Recipe ID: "+id);
+        console.log(`https://api.spoonacular.com/recipes/${id}/summary?apiKey=${foodKey}`);
+        fetch(`https://api.spoonacular.com/recipes/${id}/summary?apiKey=${foodKey}`)
+            .then(response => response.json())
+            .then(element => {
+                console.log(element);
+                fourthRecipe.title = element.title;
+                fourthRecipe.summary = element.summary;
+
+                $(".modal-content").html("<h4>"+`${fourthRecipe.title}`+"</h4>" + "<p>"+`${fourthRecipe.summary}`+"</p>");
                 // loadAPICuisine(cuisine)
 
 
