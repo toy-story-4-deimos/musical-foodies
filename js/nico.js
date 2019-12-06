@@ -4,6 +4,13 @@
 //create function to minimize pings
 
 $(document).ready(function () {
+
+    let firstRecipe = {
+        id : null,
+        title : null,
+        summary: null
+    };
+
     $('.modal').modal();
 
     function loadAPICuisine(cuisine) {
@@ -11,6 +18,9 @@ $(document).ready(function () {
             .then(response => response.json())
             .then(element => {
                 console.log(element);
+                console.log(element.recipes);
+                console.log(element.recipes[0]);
+                console.log(element.recipes[0].id);
                 $('.header-one').html(element.recipes[0].title);
                 $('.card-content-one').html(element.recipes[0].winePairing.pairingText);
                 $('.card-image-one').html(`<img src= "${element.recipes[0].image}">`);
@@ -24,9 +34,10 @@ $(document).ready(function () {
                 $('.card-content-four').html(element.recipes[3].winePairing.pairingText);
                 $('.card-image-four').html(`<img src= "${element.recipes[3].image}">`);
 
+                firstRecipe.id = element.recipes[0].id;
+                firstRecipe.title = element.recipes[0].title;
+
             });
-
-
     }
 
     //need a function that generates dishes to minimize the pings
@@ -63,13 +74,14 @@ $(document).ready(function () {
 
     let input = "";
 
+
     $("#search-button").click(function () {
         let input = $("#search").val();
-        autoCompleteSearchBar();
+        autoCompleteSearchBar(input);
         console.log(input);
     });
 
-    function autoCompleteSearchBar() {
+    function autoCompleteSearchBar(input) {
 
 
         fetch(`https://api.spoonacular.com/recipes/search?number=4&query=${input}&apiKey=${foodKey}`)
@@ -90,6 +102,9 @@ $(document).ready(function () {
                 $('.card-content-four').html("Ready in: " + element.results[3].readyInMinutes + "        Minutes" + " Serves: " + element.results[0].servings);
                 $('.card-image-four').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[3].image}">`);
 
+                firstRecipe.id = element.results[0].id;
+                firstRecipe.title = element.results[0].title;
+
             });
 
 
@@ -97,19 +112,23 @@ $(document).ready(function () {
 
 
 
-        $("#recipe-button-1").click(function () {
-            let id = element.recipes[0].id;
-            console.log(id);
-            fetch(`https://api.spoonacular.com/recipes/${id}/summary&apiKey=${foodKey}`)
-                .then(response => response.json())
-                .then(element => {
-                    // console.log(element);
-                    $(".modal-content").html("<h4>element.recipes[0].title</h4>");
-                    $(".modal-content").html("<p>element.recipes[0].summary</p>")
-                    // loadAPICuisine(cuisine)
+    $("#recipe-button-1").click(function () {
+        console.log(firstRecipe);
+        let id = firstRecipe.id;
+        console.log("Recipe ID: "+id);
+        console.log(`https://api.spoonacular.com/recipes/${id}/summary?apiKey=${foodKey}`);
+        fetch(`https://api.spoonacular.com/recipes/${id}/summary?apiKey=${foodKey}`)
+            .then(response => response.json())
+            .then(element => {
+                console.log(element);
+                firstRecipe.title = element.title;
+                firstRecipe.summary = element.summary;
+
+                $(".modal-content").html("<h4>"+`${firstRecipe.title}`+"</h4>" + "<p>"+`${firstRecipe.summary}`+"</p>");
+                // loadAPICuisine(cuisine)
 
 
-                });
-        });
+            });
+    });
 });
 
