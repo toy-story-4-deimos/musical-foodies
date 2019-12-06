@@ -29,34 +29,34 @@ $(document).ready(function () {
     $('.modal').modal();
 
     function loadAPICuisine(cuisine) {
-        fetch(`https://api.spoonacular.com/recipes/random?number=4&cuisine=${cuisine}&apiKey=${foodKey}`)
+        fetch(`https://api.spoonacular.com/recipes/search?&apiKey=${foodKey}&number=4&cuisine=${cuisine}`)
             .then(response => response.json())
             .then(element => {
                 console.log(element);
-                console.log(element.recipes);
-                console.log(element.recipes[0]);
-                console.log(element.recipes[0].id);
-                $('.header-one').html(element.recipes[0].title);
-                $('.card-content-one').html(element.recipes[0].winePairing.pairingText);
-                $('.card-image-one').html(`<img src= "${element.recipes[0].image}">`);
-                $('.header-two').html(element.recipes[1].title);
-                $('.card-content-two').html(element.recipes[1].winePairing.pairingText);
-                $('.card-image-two').html(`<img src= "${element.recipes[1].image}">`);
-                $('.header-three').html(element.recipes[2].title);
-                $('.card-content-three').html(element.recipes[2].winePairing.pairingText);
-                $('.card-image-three').html(`<img src= "${element.recipes[2].image}">`);
-                $('.header-four').html(element.recipes[3].title);
-                $('.card-content-four').html(element.recipes[3].winePairing.pairingText);
-                $('.card-image-four').html(`<img src= "${element.recipes[3].image}">`);
+                console.log(element.results);
+                console.log(element.results[0]);
+                console.log(element.results[0].id);
+                $('.header-one').html(element.results[0].title);
+                // $('.card-content-one').html(element.results[0].winePairing.pairingText);
+                $('.card-image-one').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[0].image}">`);
+                $('.header-two').html(element.results[1].title);
+                // $('.card-content-two').html(element.recipes[1].winePairing.pairingText);
+                $('.card-image-two').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[1].image}">`);
+                $('.header-three').html(element.results[2].title);
+                // $('.card-content-three').html(element.recipes[2].winePairing.pairingText);
+                $('.card-image-three').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[2].image}">`);
+                $('.header-four').html(element.results[3].title);
+                // $('.card-content-four').html(element.recipes[3].winePairing.pairingText);
+                $('.card-image-four').html(`<img src= "https://spoonacular.com/recipeImages/${element.results[3].image}">`);
 
-                firstRecipe.id = element.recipes[0].id;
-                firstRecipe.title = element.recipes[0].title;
-                secondRecipe.id = element.recipes[1].id;
-                secondRecipe.title = element.recipes[1].title;
-                thirdRecipe.id = element.recipes[2].id;
-                thirdRecipe.title = element.recipes[2].title;
-                fourthRecipe.id = element.recipes[3].id;
-                fourthRecipe.title = element.recipes[3].title;
+                firstRecipe.id = element.results[0].id;
+                firstRecipe.title = element.results[0].title;
+                secondRecipe.id = element.results[1].id;
+                secondRecipe.title = element.results[1].title;
+                thirdRecipe.id = element.results[2].id;
+                thirdRecipe.title = element.results[2].title;
+                fourthRecipe.id = element.results[3].id;
+                fourthRecipe.title = element.results[3].title;
             });
     }
 
@@ -83,8 +83,8 @@ $(document).ready(function () {
         loadAPICuisine("italian");
 
     });
-    $('#asian').click(function () {
-        loadAPICuisine("asian");
+    $('#japanese').click(function () {
+        loadAPICuisine("japanese");
 
     });
     $('#mexican').click(function () {
