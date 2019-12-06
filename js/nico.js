@@ -99,6 +99,15 @@ $(document).ready(function () {
         autoCompleteSearchBar(input);
         console.log(input);
     });
+    // $("#search").keydown(function () {
+    //     let input = $("#search").val();
+    //     let key = e.which;
+    //     if(key == 13){
+    //         autoCompleteSearchBar(input);
+    //         console.log(input);
+    //
+    //     }
+    // });
 
     function autoCompleteSearchBar(input) {
 

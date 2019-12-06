@@ -62,6 +62,7 @@
     }
 
 
+
 </style>
 <body>
 <!--main navbar-->
@@ -72,16 +73,18 @@
         <ul class="right hide-on-med-and-down">
             <li><a href="#">Sign Up!</a></li>
             <li><a href="#">Login</a></li>
-            <li><a href="#">About Us</a></li>
+
             <li><a href="#">FAQ</a></li>
+            <li><a href="#">Chefs in Your Area!</a></li>
         </ul>
     </div>
+
     <!--Side navbar-->
     <ul class="sidenav" id="mobile-demo">
         <li><a href="#">Sign Up!</a></li>
         <li><a href="#">Login</a></li>
-        <li><a href="#">About Us</a></li>
         <li><a href="#">FAQ</a></li>
+        <li><a href="#">Chefs in Your Area!</a></li>
     </ul>
 </nav>
 <!--end navbar-->
@@ -156,9 +159,9 @@
             <form>
                 <div class="input-field color white">
                     <input id="search" type="search" required>
-                    <label class="label-icon"  for="search"><i class="material-icons" id="search-button">search</i></label>
-                    <i class="material-icons">close</i>
+                        <i class="material-icons">close</i>
                 </div>
+                <label class="label-icon"  for="search"><i class="material-icons" id="search-button">search</i></label>
             </form>
         </div>
         <!--Search bar end-->
@@ -236,7 +239,7 @@
                         <!--wine content (if any)-->
                     </div>
                     <div class="card-action">
-                        <a id="recipe-button-1" class="waves-effect waves-light btn modal-trigger #6d4c41 brown lighten-1" href="#modal1">Make this recipe!</a>
+                        <a id="recipe-button-1" class="waves-effect waves-light btn modal-trigger #6d4c41 brown lighten-1" href="#modal1">Summary</a>
                         <!-- Modal Structure -->
                         <div id="modal1" class="modal">
                             <div class="modal-content">
@@ -270,7 +273,7 @@
                         <!--wine content (if any)-->
                     </div>
                     <div class="card-action">
-                        <a id="recipe-button-2" class="waves-effect waves-light btn modal-trigger  #6d4c41 brown lighten-1" href="#modal2">Make this recipe!</a>
+                        <a id="recipe-button-2" class="waves-effect waves-light btn modal-trigger  #6d4c41 brown lighten-1" href="#modal2">Summary</a>
 
                         <div id="modal2" class="modal">
                             <div class="modal-content">
@@ -302,7 +305,7 @@
                         <!--wine content (if any)-->
                     </div>
                     <div class="card-action">
-                        <a id="recipe-button-3" class="waves-effect waves-light btn modal-trigger  #6d4c41 brown lighten-1" href="#modal3">Make this recipe!</a>
+                        <a id="recipe-button-3" class="waves-effect waves-light btn modal-trigger  #6d4c41 brown lighten-1" href="#modal3">Summary</a>
 
                         <div id="modal3" class="modal">
                             <div class="modal-content">
@@ -333,7 +336,7 @@
                         <!--wine content if any-->
                     </div>
                     <div class="card-action">
-                        <a id="recipe-button-4" class="waves-effect waves-light btn modal-trigger  #6d4c41 brown lighten-1" href="#modal4">Make this recipe!</a>
+                        <a id="recipe-button-4" class="waves-effect waves-light btn modal-trigger  #6d4c41 brown lighten-1" href="#modal4">Summary</a>
 
                         <div id="modal4" class="modal">
                             <div class="modal-content">
@@ -389,22 +392,21 @@
         $('.carousel.carousel-slider').carousel({
             fullWidth: true
         });
-        $('input.search').autocomplete({
-            data: {
-                "Chinese": null,
-                "French": null,
-                "Greek": null,
-                "Indian": null,
-                "Italian": null,
-                "Asian": null,
-                "Mexican": null,
-                "Wine": null,
-                "Recipes": null,
-                "Food": null,
-                "Wine Pairings": null,
-                //i need to eventually link the API to this data here.
-            },
-        });
+        // $('input.search').autocomplete({
+        //     data: {
+        //         "Chinese": null,
+        //         "French": null,
+        //         "Greek": null,
+        //         "Indian": null,
+        //         "Italian": null,
+        //         "Asian": null,
+        //         "Mexican": null,
+        //         "Wine": null,
+        //         "Recipes": null,
+        //         "Food": null,
+        //         "Wine Pairings": null,
+        //     },
+        // });
         autoplay();
 
         function autoplay() {
